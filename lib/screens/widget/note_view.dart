@@ -48,29 +48,31 @@ class NoteView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: note.isRtl! ? Alignment.centerRight : Alignment.centerLeft ,
-              child: Text(
-                note.title,
-                textDirection: note.isRtl! ? TextDirection.rtl : TextDirection.ltr,
-                style: const TextStyle(fontSize: 26),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: note.isRtl! ? Alignment.centerRight : Alignment.centerLeft ,
+                child: Text(
+                  note.title,
+                  textDirection: note.isRtl! ? TextDirection.rtl : TextDirection.ltr,
+                  style: const TextStyle(fontSize: 26),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Align(
-              alignment: note.isRtl! ? Alignment.centerRight : Alignment.centerLeft ,
-              child: Text(
-                note.body,
-                textDirection: note.isRtl! ? TextDirection.rtl : TextDirection.ltr,
-                style: const TextStyle(fontSize: 18),
+              const SizedBox(
+                height: 10,
               ),
-            ),
-          ],
+              Align(
+                alignment: note.isRtl! ? Alignment.centerRight : Alignment.centerLeft ,
+                child: Text(
+                  note.body,
+                  textDirection: note.isRtl! ? TextDirection.rtl : TextDirection.ltr,
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -48,30 +48,32 @@ class _CreateNoteState extends State<CreateNote> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            TextFormField(
-              textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-              controller: titleController,
-              style: const TextStyle(fontSize: 24),
-
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Title",
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextFormField(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextFormField(
                 textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-                controller: bodyController,
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                style: const TextStyle(fontSize: 18),
+                controller: titleController,
+                style: const TextStyle(fontSize: 24),
+          
                 decoration: const InputDecoration(
-                    border: InputBorder.none, hintText: "Your Text")),
-          ],
+                  border: InputBorder.none,
+                  hintText: "Title",
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                  textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
+                  controller: bodyController,
+                  keyboardType: TextInputType.multiline,
+                  maxLines: null,
+                  style: const TextStyle(fontSize: 18),
+                  decoration: const InputDecoration(
+                      border: InputBorder.none, hintText: "Your Text")),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
